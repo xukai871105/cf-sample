@@ -1,7 +1,6 @@
-package org.wsncoap.embedded;
+package org.iotwuxi;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.security.GeneralSecurityException;
 import java.security.KeyStore;
@@ -23,10 +22,14 @@ import org.eclipse.californium.core.server.resources.CoapExchange;
 import org.eclipse.californium.scandium.DTLSConnector;
 import org.eclipse.californium.scandium.ScandiumLogger;
 import org.eclipse.californium.scandium.config.DtlsConnectorConfig;
+import org.eclipse.californium.scandium.dtls.NULLClientKeyExchange;
 import org.eclipse.californium.scandium.dtls.cipher.CipherSuite;
 import org.eclipse.californium.scandium.dtls.pskstore.InMemoryPskStore;
-
-public class CoAPDtlsServer 
+/**
+ * Hello world!
+ *
+ */
+public class App 
 {
     static {
         CaliforniumLogger.initialize();
@@ -43,8 +46,8 @@ public class CoAPDtlsServer
     private static final String KEY_STORE_LOCATION = "certs/keyStore.jks";
     private static final String TRUST_STORE_LOCATION = "certs/trustStore.jks";
 
-    public static void main(String[] args) {
-
+    public static void main( String[] args )
+    {
         CoapServer server = new CoapServer();
         server.add(new CoapResource("secure") {
             @Override
@@ -62,6 +65,17 @@ public class CoAPDtlsServer
             }
         });
 
+        InputStream inTest = App.class.getResourceAsStream("/org/iotwuxi/test.txt");
+        if (inTest == null) {
+            System.out.println(App.class.getClassLoader());
+            System.out.println("Empty");
+            return;
+        }
+        else
+        {
+            System.out.println("OK");
+        }
+
         try {
             // Pre-shared secrets
             InMemoryPskStore pskStore = new InMemoryPskStore();
@@ -69,7 +83,8 @@ public class CoAPDtlsServer
 
             // load the trust store
             KeyStore trustStore = KeyStore.getInstance("JKS");
-            InputStream inTrust = CoAPDtlsServer.class.getResourceAsStream(TRUST_STORE_LOCATION);
+            InputStream inTrust = App.class.getClassLoader().getResourceAsStream(TRUST_STORE_LOCATION);
+            // InputStream inTrust = App.class.getResourceAsStream(TRUST_STORE_LOCATION);
             trustStore.load(inTrust, TRUST_STORE_PASSWORD.toCharArray());
 
             // You can load multiple certificates if needed
@@ -78,8 +93,9 @@ public class CoAPDtlsServer
 
             // load the key store
             KeyStore ks = KeyStore.getInstance("JKS");
-            // InputStream in = SecureServer.class.getClassLoader().getResourceAsStream(KEY_STORE_LOCATION);
-            InputStream in = CoAPDtlsServer.class.getResourceAsStream(KEY_STORE_LOCATION);
+            // InputStream in = App.class.getClassLoader().getResourceAsStream(KEY_STORE_LOCATION);
+            InputStream in = App.class.getResourceAsStream(KEY_STORE_LOCATION);
+            if (in == null) return;
             ks.load(in, KEY_STORE_PASSWORD.toCharArray());
 
             DtlsConnectorConfig.Builder config = new DtlsConnectorConfig.Builder(new InetSocketAddress(DTLS_PORT));
