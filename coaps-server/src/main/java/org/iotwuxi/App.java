@@ -64,18 +64,7 @@ public class App
                 exchange.respond(ResponseCode.CONTENT, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
             }
         });
-
-        InputStream inTest = App.class.getResourceAsStream("/org/iotwuxi/test.txt");
-        if (inTest == null) {
-            System.out.println(App.class.getClassLoader());
-            System.out.println("Empty");
-            return;
-        }
-        else
-        {
-            System.out.println("OK");
-        }
-
+        
         try {
             // Pre-shared secrets
             InMemoryPskStore pskStore = new InMemoryPskStore();
@@ -93,9 +82,8 @@ public class App
 
             // load the key store
             KeyStore ks = KeyStore.getInstance("JKS");
-            // InputStream in = App.class.getClassLoader().getResourceAsStream(KEY_STORE_LOCATION);
-            InputStream in = App.class.getResourceAsStream(KEY_STORE_LOCATION);
-            if (in == null) return;
+            InputStream in = App.class.getClassLoader().getResourceAsStream(KEY_STORE_LOCATION);
+            // InputStream in = App.class.getResourceAsStream(KEY_STORE_LOCATION);
             ks.load(in, KEY_STORE_PASSWORD.toCharArray());
 
             DtlsConnectorConfig.Builder config = new DtlsConnectorConfig.Builder(new InetSocketAddress(DTLS_PORT));

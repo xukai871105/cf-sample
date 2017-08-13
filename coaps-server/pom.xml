@@ -36,6 +36,15 @@
     </dependencies>
 
     <build>
+        <resources>
+            <resource>
+                <!--basedir maven内置变量-->
+                <directory>${basedir}/src/main/resources</directory>
+                <includes>
+                    <include>**/*</include>
+                </includes>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
