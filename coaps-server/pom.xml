@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.iotwuxi</groupId>
-    <artifactId>embedded</artifactId>
+    <artifactId>coaps-server</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>embedded</name>
+    <name>coaps-server</name>
     <url>http://maven.apache.org</url>
 
     <properties>
