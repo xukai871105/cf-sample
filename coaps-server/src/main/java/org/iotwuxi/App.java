@@ -64,7 +64,7 @@ public class App
                 exchange.respond(ResponseCode.CONTENT, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(date));
             }
         });
-        
+
         try {
             // Pre-shared secrets
             InMemoryPskStore pskStore = new InMemoryPskStore();
