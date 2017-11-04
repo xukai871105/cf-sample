@@ -1,4 +1,4 @@
-package com.iotwuxi;
+package org.iotwuxi;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -3,11 +3,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.iotwuxi</groupId>
-    <artifactId>hello-client</artifactId>
+    <artifactId>simple-server</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <packaging>jar</packaging>
 
-    <name>hello-client</name>
+    <name>embedded</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -66,4 +67,6 @@
         </plugins>
     </build>
 
+
 </project>
+

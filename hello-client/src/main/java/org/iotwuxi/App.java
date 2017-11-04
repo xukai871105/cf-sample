@@ -1,4 +1,4 @@
-package com.iotwuxi;
+package org.iotwuxi;
 
 import java.net.URI;
 import java.net.URISyntaxException;
