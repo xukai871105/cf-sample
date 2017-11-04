@@ -66,9 +66,9 @@
 ```
 
 ### 运行
-选择正确的main class文件
+选择正确的main class文件  
 ![](http://ovqdgsm5c.bkt.clouddn.com/17-11-4/89726294.jpg)
 
 ### 生成JAR
-在target文件中生成jar可执行文件，点击运行
+在target文件中生成jar可执行文件，点击运行  
 ![](http://ovqdgsm5c.bkt.clouddn.com/17-11-4/90923166.jpg)
