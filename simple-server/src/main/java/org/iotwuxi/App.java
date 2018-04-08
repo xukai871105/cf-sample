@@ -29,7 +29,8 @@ public class App {
 
         CoapServer server = new CoapServer(net);
         server.addEndpoint(endpoint);
-        server.addEndpoint(new CoapEndpoint(new InetSocketAddress("127.0.0.1", 5683)));
+        // server.addEndpoint(new CoapEndpoint(new InetSocketAddress("127.0.0.1", 5683)));
+        server.addEndpoint(new CoapEndpoint(new InetSocketAddress(CoAP.DEFAULT_COAP_PORT)));
 
         // CoapServer server = new CoapServer();
         server.add(new CoapResource("hello") {
