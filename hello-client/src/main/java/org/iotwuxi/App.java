@@ -14,7 +14,7 @@ public class App {
     public static void main(String[] args) {
         URI uri = null;
         try {
-            uri = new URI("coap://wsncoap.org/test");
+            uri = new URI("coap+tcp://127.0.0.1/time");
         } catch (URISyntaxException e) {
             System.err.println("Invalid URI: " + e.getMessage());
             System.exit(-1);
