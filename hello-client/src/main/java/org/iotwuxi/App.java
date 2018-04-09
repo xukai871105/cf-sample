@@ -13,11 +13,21 @@ import org.eclipse.californium.core.Utils;
 public class App {
     public static void main(String[] args) {
         URI uri = null;
-        try {
-            uri = new URI("coap+tcp://127.0.0.1/time");
-        } catch (URISyntaxException e) {
-            System.err.println("Invalid URI: " + e.getMessage());
-            System.exit(-1);
+
+        if (args.length > 0) {
+            try {
+                uri = new URI(args[0]);
+            } catch (URISyntaxException e) {
+                System.err.println("Invalid URI: " + e.getMessage());
+                System.exit(-1);
+            }
+        } else {
+            try {
+                uri = new URI("coap//127.0.0.1/time");
+            } catch (URISyntaxException e) {
+                System.err.println("Invalid URI: " + e.getMessage());
+                System.exit(-1);
+            }
         }
 
         CoapClient client = new CoapClient(uri);
