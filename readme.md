@@ -2,6 +2,10 @@
 1. 使用Java Californium 框架
 2. 使用MAVEN构建
 3. 示例中包含多个与CoAP有关的工程
+其中
+1. code文件夹中包含CoAPs的使用方法
+2. coaps-psk-* 包括CoAPs客户端和服务器 密钥交换方式为PSK
+3. 其他需要整理补充
 
 ## 操作步骤
 ### 新建工程
