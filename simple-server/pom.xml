@@ -14,7 +14,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--定义一个mainclass变量-->
-        <assembly.mainClass>org.iotwuxi.App</assembly.mainClass>
+        <assembly.mainClass>org.iotwuxi.embedded.App</assembly.mainClass>
     </properties>
 
     <dependencies>

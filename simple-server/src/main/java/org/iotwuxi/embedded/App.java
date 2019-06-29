@@ -1,4 +1,4 @@
-package org.iotwuxi;
+package org.iotwuxi.embedded;
 
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.CoapServer;
@@ -18,6 +18,7 @@ import java.util.Date;
  */
 public class App {
     public static void main(String[] args) {
+
 
         NetworkConfig net = NetworkConfig.createStandardWithoutFile()
                 .setLong(NetworkConfig.Keys.MAX_MESSAGE_SIZE, 16 * 1024)

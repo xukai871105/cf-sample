@@ -43,11 +43,17 @@ public class App
         dtlsConnector = new DTLSConnector(builder.build());
     }
 
-    public void test() {
+    public void test(String[] args) {
 
         CoapResponse response = null;
+        URI uri;
         try {
-            URI uri = new URI(LOCAL_SERVER_URI);
+            if (args.length > 0) {
+                uri =  new URI(args[0]);
+            } else {
+                uri = new URI(LOCAL_SERVER_URI);
+            }
+            System.out.println("URI: " + uri.toString());
 
             CoapClient client = new CoapClient(uri);
             client.setEndpoint(new CoapEndpoint(dtlsConnector, NetworkConfig.getStandard()));
@@ -75,7 +81,7 @@ public class App
     public static void main(String[] args) throws InterruptedException {
 
         App client = new App();
-        client.test();
+        client.test(args);
 
         synchronized (App.class) {
             App.class.wait();
