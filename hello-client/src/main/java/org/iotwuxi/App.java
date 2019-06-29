@@ -1,17 +1,19 @@
 package org.iotwuxi;
 
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 
 import org.eclipse.californium.core.CoapClient;
 import org.eclipse.californium.core.CoapResponse;
 import org.eclipse.californium.core.Utils;
+import org.eclipse.californium.elements.exception.ConnectorException;
 
 /**
- * Hello world!
+ * @author xukai
  */
 public class App {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException, ConnectorException {
         URI uri = null;
 
         if (args.length > 0) {
@@ -23,7 +25,7 @@ public class App {
             }
         } else {
             try {
-                uri = new URI("coap//127.0.0.1/time");
+                uri = new URI("coap://127.0.0.1/time");
             } catch (URISyntaxException e) {
                 System.err.println("Invalid URI: " + e.getMessage());
                 System.exit(-1);
