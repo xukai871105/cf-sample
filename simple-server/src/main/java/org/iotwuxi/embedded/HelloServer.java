@@ -6,11 +6,8 @@ import org.eclipse.californium.core.coap.CoAP;
 import org.eclipse.californium.core.network.CoapEndpoint;
 import org.eclipse.californium.core.network.config.NetworkConfig;
 import org.eclipse.californium.core.server.resources.CoapExchange;
-
-
 import java.net.InetSocketAddress;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 
 /**
  * @author xukai

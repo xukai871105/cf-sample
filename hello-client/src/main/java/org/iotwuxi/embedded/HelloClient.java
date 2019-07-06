@@ -1,4 +1,4 @@
-package org.iotwuxi;
+package org.iotwuxi.embedded;
 
 import java.io.IOException;
 import java.net.URI;
@@ -12,7 +12,7 @@ import org.eclipse.californium.elements.exception.ConnectorException;
 /**
  * @author xukai
  */
-public class App {
+public class HelloClient {
     public static void main(String[] args) throws IOException, ConnectorException {
         URI uri = null;
 
