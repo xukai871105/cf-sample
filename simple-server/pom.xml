@@ -13,7 +13,7 @@
 
     <packaging>jar</packaging>
 
-    <name>embedded</name>
+    <name>simple-server</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -32,12 +32,10 @@
         <dependency>
             <groupId>org.eclipse.californium</groupId>
             <artifactId>californium-core</artifactId>
-            <version>2.0.0-M15</version>
         </dependency>
         <dependency>
             <groupId>org.eclipse.californium</groupId>
             <artifactId>element-connector</artifactId>
-            <version>2.0.0-M15</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
