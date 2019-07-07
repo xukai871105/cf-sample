@@ -26,35 +26,26 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
-            <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.eclipse.californium/scandium -->
         <dependency>
             <groupId>org.eclipse.californium</groupId>
             <artifactId>scandium</artifactId>
-            <version>2.0.0-M15</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.eclipse.californium/element-connector -->
         <dependency>
             <groupId>org.eclipse.californium</groupId>
             <artifactId>element-connector</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.25</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.2.3</version>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>
-            <version>1.2.3</version>
         </dependency>
     </dependencies>
 
