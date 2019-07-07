@@ -15,12 +15,14 @@ import java.net.InetSocketAddress;
 public class HelloServer {
     private static final Integer COAP_PORT = NetworkConfig.getStandard().getInt(NetworkConfig.Keys.COAP_PORT);
     public static void main(String[] argv) {
-
+        // 第一步 配置文件
         NetworkConfig networkConfig = NetworkConfig.createStandardWithoutFile();
+        // 第二步 创建Endpoint
         CoapEndpoint.Builder coapEndpointBuilder = new CoapEndpoint.Builder();
         coapEndpointBuilder.setNetworkConfig(networkConfig);
-        coapEndpointBuilder.setInetSocketAddress(new InetSocketAddress("127.0.0.1", COAP_PORT));
+        coapEndpointBuilder.setInetSocketAddress(new InetSocketAddress(COAP_PORT));
 
+        // 第三步 创建CoAP服务器 并绑定Endpoint
         CoapServer server = new CoapServer();
         server.addEndpoint(coapEndpointBuilder.build());
 
@@ -35,6 +37,7 @@ public class HelloServer {
         // 增加CoAP资源的常规方法
         server.add(new TimeResource());
 
+        // 最后，启动服务器
         server.start();
     }
 }
