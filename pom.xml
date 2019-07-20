@@ -15,6 +15,7 @@
         <module>dtls-server</module>
         <module>coaps-psk-client</module>
         <module>coaps-psk-server</module>
+        <module>cose-demo</module>
     </modules>
 
     <dependencyManagement>
@@ -57,5 +58,20 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 
 </project>
