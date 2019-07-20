@@ -16,6 +16,7 @@
         <module>coaps-psk-client</module>
         <module>coaps-psk-server</module>
         <module>cose-demo</module>
+        <module>cbor-demo</module>
     </modules>
 
     <dependencyManagement>
