@@ -11,9 +11,7 @@ import org.slf4j.LoggerFactory;
 
 public class Sign1MessageTest {
     private static final Logger logger = LoggerFactory.getLogger(Sign1MessageTest.class);
-    static OneKey signingKey;
-    static OneKey sign2Key;
-    static OneKey sign3Key;
+    private static OneKey signingKey;
 
     @Rule
     public ExpectedException thrown = ExpectedException.none();
@@ -21,15 +19,14 @@ public class Sign1MessageTest {
     @Before
     public void setUp() throws CoseException {
         signingKey = OneKey.generateKey(AlgorithmID.ECDSA_256);
-        sign2Key = OneKey.generateKey(AlgorithmID.ECDSA_512);
-        sign3Key = OneKey.generateKey(AlgorithmID.ECDSA_384);
     }
 
     @Test
     public void testSignAMessage() throws CoseException {
+        signingKey = OneKey.generateKey(AlgorithmID.ECDSA_256);
+
         byte[] result = SignAMessage("This is lots of content");
         assert( VerifyAMessage(result, signingKey) );
-        assert( !VerifyAMessage(result, sign2Key));
     }
 
     public static byte[] SignAMessage(String ContentToSign) throws CoseException {
@@ -47,7 +44,7 @@ public class Sign1MessageTest {
         //  Now serialize out the message
         byte[] signBytes =  msg.EncodeToBytes();
         System.out.println(msg.EncodeToCBORObject().toString());
-       logger.info("{} Hex: {}", signBytes.length, Hex.encodeHexString(signBytes));
+        System.out.println("HEXSTRING[" + signBytes.length + "]:" + Hex.encodeHexString(signBytes));
         return signBytes;
     }
 
@@ -56,7 +53,6 @@ public class Sign1MessageTest {
 
         try {
             Sign1Message msg = (Sign1Message) Message.DecodeFromBytes(message);
-
             result = msg.validate(key);
         } catch (CoseException e) {
             return false;

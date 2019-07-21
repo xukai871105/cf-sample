@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestCBOR {
+public class TestCBOREncode {
     private void printCborHexString(CBORObject obj) {
         byte[] bytes = obj.EncodeToBytes();
         String hexString = Hexdump.hexdump(bytes);
