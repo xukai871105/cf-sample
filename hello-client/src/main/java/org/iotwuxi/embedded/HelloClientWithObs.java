@@ -51,6 +51,7 @@ public class HelloClientWithObs {
             super();
         }
 
+        @Override
         public void onLoad(CoapResponse response) {
             if (response != null) {
                 System.out.println(Utils.prettyPrint(response));
@@ -59,6 +60,7 @@ public class HelloClientWithObs {
             }
         }
 
+        @Override
         public void onError() {
 
         }

@@ -1,15 +1,16 @@
 ## 说明
-1. 使用Java Californium 框架
+1. 使用Java Californium框架
 2. 使用MAVEN构建
 3. 示例中包含多个与CoAP有关的工程
+
 其中
-1. code文件夹中包含CoAPs的使用方法
-2. coaps-psk-* 包括CoAPs客户端和服务器 密钥交换方式为PSK
-3. 其他需要整理补充
+1. hello-client最简单的Client
+2. code文件夹中包含CoAPs的使用方法
+3. coaps-psk-* 包括CoAPs客户端和服务器 密钥交换方式为PSK
+4. 其他待补充
+
 
 ## 操作步骤
-### 新建工程
-![](http://ovqdgsm5c.bkt.clouddn.com/17-11-4/21770248.jpg)
 
 ### 修改POM文件
 1. 增加mainclass定义
@@ -72,8 +73,9 @@
 
 ### 运行
 选择正确的main class文件  
-![](http://ovqdgsm5c.bkt.clouddn.com/17-11-4/89726294.jpg)
 
 ### 生成JAR
-在target文件中生成jar可执行文件，点击运行  
-![](http://ovqdgsm5c.bkt.clouddn.com/17-11-4/90923166.jpg)
+在target文件中生成jar可执行文件，点击运行
+``` 
+mvn clean package -Dmaven.test.skip=true
+```

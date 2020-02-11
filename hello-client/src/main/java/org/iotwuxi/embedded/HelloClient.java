@@ -15,7 +15,6 @@ import org.eclipse.californium.elements.exception.ConnectorException;
  * @author xukai
  */
 public class HelloClient {
-    // private static final String serverUrl = "coap://127.0.0.1:5683/time";
     private static final String serverUrl = "coap://139.196.187.107:5683/test";
     public static void main(String[] args) throws IOException, ConnectorException {
 
@@ -30,7 +29,6 @@ public class HelloClient {
         CoapResponse response = client.get();
 
         if (response != null) {
-
             System.out.println(response.getCode());
             System.out.println(response.getOptions());
             System.out.println(response.getResponseText());
